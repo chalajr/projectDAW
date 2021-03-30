@@ -32,7 +32,7 @@ if(
 		// response 202 - Accepted
 		http_response_code(202);
 		// message for user
-		echo json_encode(array("log" => "The requested user was updated! :^)"));
+		echo json_encode(array("log" => "The requested user was created! :^)"));
 	}
 	else {
 		// response 500 - Internal Server Error

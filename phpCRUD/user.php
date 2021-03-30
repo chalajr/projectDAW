@@ -52,11 +52,18 @@ class User
         $statement = $this->comm->prepare($query);
         
         $statement->bindParam(":id", $this->id);
-        $statement->bindParam(1, $this->id);
       
         $statement->execute();
-      
-        return $statement;
+
+        $item = $statement->fetch(PDO::FETCH_ASSOC);
+
+        $this->id = $item['id'];
+        $this->username = $item['username'];
+        $this->email = $item['email'];
+        $this->displayname = $item['displayname'];
+        $this->password = $item['password'];
+        $this->deleted = $item['deleted'];
+
     }
 
     function update(){
