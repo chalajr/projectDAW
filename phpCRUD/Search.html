@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PHP Live MySQL Database Search</title>
+  <style>
+    body{
+      font-family: Arail, sans-serif;
+    }
+    /* Formatting search box */
+    .search-box{
+      width: 300px;
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
+    }
+    .search-box input[type="text"]{
+      height: 32px;
+      padding: 5px 10px;
+      border: 1px solid #CCCCCC;
+      font-size: 14px;
+    }
+    .search-box input[type="text"], .result{
+      width: 100%;
+      box-sizing: border-box;
+    }
+    /* Formatting result items */
+    .result {
+      margin: 0;
+      padding: 7px 10px;
+      border: 1px solid #CCCCCC;
+      border-top: none;
+      cursor: pointer;
+      max-width: 300px;
+      background: #f2f2f2;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .result p {
+      max-width: inherit;
+    }
+
+  </style>
+
+
+
+  <script>
+    function showHint(str) {
+      var xhttp;
+      if (str.length == 0) {
+        document.getElementById("resultado").innerHTML = "";
+        return;
+      }
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("resultado").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "Search.php?username="+str, true);
+      xhttp.send();
+    }
+  </script>
+
+</head>
+<body>
+<div class="search-box">
+  <input type="text" autocomplete="off" placeholder="Search .." onchange="showHint(this.value)" />
+  <!--Search user: <input id="search" name="search" onkeyup="showHint(this.value)"/-->
+</div>
+<div class="result">
+  <p id="resultado"></p>
+</div>
+</body>
+</html>

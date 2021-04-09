@@ -119,6 +119,27 @@ class User
         return false;
     }
 
+    function search(){
+
+        // single-reading query
+        $query = "SELECT  username, email, displayname
+            FROM " . $this->table_name . " WHERE username = :username ";
+
+        $statement = $this->comm->prepare($query);
+
+        $statement->bindParam(":username", $this->username);
+
+        $statement->execute();
+
+        $item = $statement->fetch(PDO::FETCH_ASSOC);
+
+
+        $this->username = $item['username'];
+        $this->email = $item['email'];
+        $this->displayname = $item['displayname'];
+
+    }
+
     /**
      * @return mixed
      */
@@ -194,7 +215,7 @@ class User
     /**
      * @param mixed $password
      */
-    public function setPassword($user)
+    public function setPassword($password)
     {
         $this->password = $password;
     }
