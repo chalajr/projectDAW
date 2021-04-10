@@ -3,7 +3,7 @@ class Dbcomm {
 
 	//database credentials
 	private $db_host = "localhost";
-	private $db_name = "daw";
+	private $db_name = "inventorizerdaw";
 	private $db_user = "root";
 	private $db_pass = "";
 	public $comm;

@@ -35,6 +35,10 @@
       background: #f2f2f2;
       display: inline;
     }
+    .submitbtn {
+      position: absolute;
+      font-size: 14px;
+    }
     
   </style>
 
@@ -61,8 +65,9 @@
 </head>
 <body>
 <div class="search-box">
-  <input type="text" autocomplete="off" placeholder="Search .." onkeyup="showHint(this.value)" />
+  <input type="text" id="request" autocomplete="off" placeholder="Search .." />
   <!--Search user: <input id="search" name="search" onkeyup="showHint(this.value)"/-->
+  <button class="submitbtn" onclick="showHint(request.value)">Search in DB</button>
 </div>
 <br/>
 <div class="result">
