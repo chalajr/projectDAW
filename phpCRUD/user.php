@@ -3,8 +3,8 @@
 class User
 {
     // database comm line and table name
-    private $comm;
-    private $table_name = "users";
+    public $comm;
+    public $table_name = "users";
 
     // table fields
     public $id;
@@ -121,22 +121,21 @@ class User
 
     function search(){
 
-        // single-reading query
         $query = "SELECT  username, email, displayname
-            FROM " . $this->table_name . " WHERE username = :username ";
+            FROM " . $this->table_name . " WHERE username LIKE '%" . $this->username . "%' AND deleted = 0";
 
         $statement = $this->comm->prepare($query);
 
-        $statement->bindParam(":username", $this->username);
-
         $statement->execute();
 
-        $item = $statement->fetch(PDO::FETCH_ASSOC);
+        $item = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+        return $item;
 
+        /*$this->deleted = $item['deleted'];
         $this->username = $item['username'];
         $this->email = $item['email'];
-        $this->displayname = $item['displayname'];
+        $this->displayname = $item['displayname'];*/
 
     }
 

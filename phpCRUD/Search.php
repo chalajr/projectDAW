@@ -14,18 +14,25 @@ $user = new User($db);
 
 $user->username = isset($_GET['username']) ? $_GET['username'] : die();
 
-$user->search();
+$item = $user->search();
 
 //var_dump($user);
 
-if(!empty($user->username) && $user->deleted!=1){
+if(!empty($item)){
 
-    // create display
-    $display = array(
-        "username" => $user->username,
-        "email" => $user->email,
-        "displayname" => $user->displayname
-    );
+    $display = array();
+
+    foreach ($item as $unit) {
+       // create display
+        $coin = array(
+            "username" => $unit['username'],
+            "email" => $unit['email'],
+            "displayname" => $unit['displayname']
+        );
+
+        array_push($display,$coin);
+    }
+        
 
     // set response code - 200 OK
     http_response_code(200);
