@@ -46,7 +46,7 @@ else {
     // response 404 - Not Found
     http_response_code(404);
     // message for user
-    echo json_encode(array("log" => "username not recognized for reading! :^("));
+    echo json_encode(array("log" => "No matching users were found in the records :^("));
 }
 
 

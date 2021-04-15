@@ -49,11 +49,11 @@
       }
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && (this.status == 200 || this.status == 404)) {
           document.getElementById("resultado").innerHTML = this.responseText;
         }
       };
-      xhttp.open("GET", "Search.php?username="+str, true);
+      xhttp.open("GET", "searchAJAX.php?username="+str, true);
       xhttp.send();
     }
   </script>
@@ -62,7 +62,6 @@
 <body>
 <div class="search-box">
   <input type="text" autocomplete="off" placeholder="Search .." onkeyup="showHint(this.value)" />
-  <!--Search user: <input id="search" name="search" onkeyup="showHint(this.value)"/-->
 </div>
 <br/>
 <div class="result">
