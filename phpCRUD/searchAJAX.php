@@ -33,13 +33,13 @@ if(!empty($item)){
         array_push($display,$coin);
     }
         
-
+    //echo "Username: " . $coin['username'];
     // set response code - 200 OK
     http_response_code(200);
 
     // make it json format
-    echo json_encode($display);
-    //echo "Nombre". $display['username'];
+    $json = json_encode($display);
+    echo $json;
 }
 
 else {
