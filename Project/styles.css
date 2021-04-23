@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+  	font-size: 16px;
+}
+
+html, body {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #435165 !important;
+}
+
+.login {
+  	width: 500px;
+  	margin: 53px auto;
+  	align-items: center;
+  	align-self: center;
+  	justify-content: center;
+  	background-color: #ffffff;
+  	box-shadow: 0px 0px 50px 15px rgba(0, 192, 192, 0.8);
+}
+
+.login div {
+    display: flex;
+    border-bottom: 10px groove #dee0e4;
+}
+
+.login img {
+    flex: 1;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 150px;
+    height: 90px;
+}
+
+.login h1 {
+    flex: 2;
+  	text-align: center;
+  	padding: 30px 20px 30px 20px;
+  	font-size: 34px;
+  	font-style: italic;
+  	color: #5210bf;
+}
+
+.login h3 {
+  	text-align: center;
+  	padding: 15px 10px 10px 10px;
+  	font-size: 28px;
+  	font-weight: bold;
+  	color: #3274d6;
+}
+
+.login form {
+  	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	padding-top: 20px;
+}
+
+.login form label {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+    margin-left: 40px;
+  	width: 40px;
+  	height: 40px;
+  	background-color: #223044;
+  	color: #ffffff;
+}
+
+.login form input[type="password"], .login form input[type="text"] {
+  	width: 350px;
+  	height: 40px;
+  	border: 2px solid #7e8084;
+    margin-right: 40px;
+  	margin-bottom: 20px;
+  	padding: 0 15px;
+}
+
+.login form input[type="submit"] {
+    display: flex;
+    cursor: pointer;
+    padding: 10px 25px;
+ 	margin-top: 20px;
+ 	margin-bottom: 20px;
+ 	font-weight: bold;
+    background-color: #3274d6;
+    color: #ffffff;
+    border: 2px solid #223044;
+    transition: background-color 0.5s;
+}
+
+.login form input[type="submit"]:hover {
+    background-color: #223044;
+    transition: background-color 0.5s;
+}
+
+.login a {
+	display: flex;
+	justify-content: center;
+}
+
+.login button {
+  	cursor: pointer;
+  	padding: 10px 25px;
+ 	margin-top: 20px;
+ 	margin-bottom: 30px;
+ 	font-weight: bold;
+  	background-color: #3274d6;
+  	color: #ffffff;
+  	border: 2px solid #223044;
+  	transition: background-color 0.5s;
+}
+
+.login button:hover {
+	background-color: #223044;
+  	transition: background-color 0.5s;
+}
+
+#forgot {
+    cursor: pointer;
+    padding: 0px 0px 20px 0px;
+}
+
+/* SIGN UP */
+.signup{
+	width: 500px;
+    margin: 53px auto;
+	align-items: center;
+    align-self: center;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 50px 15px rgba(0, 192, 192, 0.8);
+}
+
+.signup div {
+    display: flex;
+    border-bottom: 10px groove #dee0e4;
+}
+
+.signup img {
+    flex: 1;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 150px;
+    height: 90px;
+}
+
+.signup h1 {
+    flex: 2;
+    text-align: center;
+	padding: 30px 0px 30px 0px;
+	font-size: 35px;
+	font-style: italic;
+	color: #5210bf;
+}
+
+.signup h3 {
+	text-align: center;
+	padding: 15px 10px 10px 10px;
+	font-size: 28px;
+	font-weight: bold;
+	color: #3274d6;
+}
+
+.signup form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.signup form label {
+	display: flex;
+	justify-content: center;
+	padding-top: 9px;
+	width: 170px;
+	height: 40px;
+	background-color: #223044;
+	color: #ffffff;
+}
+
+.signup form p {
+    font-size: 14px;
+}
+
+.signup form input[type="password"], .signup form input[type="text"] {
+	width: 240px;
+	height: 40px;
+	border: 2px solid #7e8084;
+	margin-bottom: 20px;
+	padding: 0 15px;
+}
+
+.signup form input[type="submit"] {
+    display: flex;
+    cursor: pointer;
+    padding: 10px 40px;
+ 	margin-top: 20px;
+ 	margin-bottom: 20px;
+ 	font-weight: bold;
+    background-color: #3274d6;
+    color: #ffffff;
+    border: 2px solid #223044;
+    transition: background-color 0.5s;
+}
+
+.signup form input[type="submit"]:hover {
+	background-color: #223044;
+    transition: background-color 0.5s;
+}
+
+.signup a {
+	display: flex;
+	justify-content: center;
+}
+
+.signup button {
+    cursor: pointer;
+    padding: 10px 20px;
+ 	margin: 20px;
+ 	font-weight: bold;
+    background-color: #3274d6;
+    color: #ffffff;
+    border: 2px solid #223044;
+    transition: background-color 0.5s;
+}
+
+.signup button:hover {
+	background-color: #223044;
+    transition: background-color 0.5s;
+}
+
