@@ -52,8 +52,7 @@ if(!empty($user->id) && !empty($user->username) && $user->deleted!=1){
 	echo json_encode($display);*/
 else {
 	// response 404 - Not Found
-	// Needs 200 to pass log error message
-	http_response_code(200);
+	//http_response_code(404);
 	// message for user
 	echo json_encode(array("log" => "ID not recognized for reading! :^("));
 }

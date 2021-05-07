@@ -45,7 +45,7 @@ else {
 	//echo json_encode(array("log" => "ID not recognized for reading! :^("));
 }*/
 
-$newdisplay = json_decode(file_get_contents('http://'.$_SERVER['HTTP_HOST'].'/DAWorkspace/projectDAW/phpCRUD/read.php?id='.$_GET['userid']), true);
+$newdisplay = json_decode(file_get_contents('http://'.$_SERVER['HTTP_HOST'].'/DAWorkspace/projectDAW/phpCRUD/read.php?id='.$var1), true);
 
 if(count($newdisplay) != 1){
 	$html = "

@@ -24,8 +24,7 @@ Route::add('/contact-form',function(){
 },'post');
 
 // Accept only numbers as parameter. Other characters will result in a 404 error
-Route::add('/user/([0-9]*)',function($var1){
-    $_GET['userid'] = $var1; 
+Route::add('/user/([0-9]*)',function($var1){ 
     include ('draft.php');
 });
 
