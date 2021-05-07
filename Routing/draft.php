@@ -4,7 +4,7 @@
 //header("Content-Type: application/json; charset=UTF-8");
 
 // database and user model
-include "../phpCRUD/dbcomm.php";
+/*include "../phpCRUD/dbcomm.php";
 include "../phpCRUD/user.php";
 
 $database = new Dbcomm();
@@ -43,9 +43,42 @@ else {
 	$html = '<p>User not found! :^(</p>';
 	// message for user
 	//echo json_encode(array("log" => "ID not recognized for reading! :^("));
-}
+}*/
 
+$newdisplay = json_decode(file_get_contents('http://'.$_SERVER['HTTP_HOST'].'/DAWorkspace/projectDAW/phpCRUD/read.php?id='.$_GET['userid']), true);
+
+if(count($newdisplay) != 1){
+	$html = "
+	<table style='border: 3px solid black; border-collapse: collapse; text-align: left;'>
+		<caption style='font-weight: bold; font-size: 30px; text-align: left;'>Recovered user:</caption>
+		<tr>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #BFBFBF; font-size: 25px;'>ID</td>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #FFFFFF; font-size: 25px;'>$newdisplay[id]</td>
+		</tr>
+		<tr>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #BFBFBF; font-size: 25px;'>Username</td>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #FFFFFF; font-size: 25px;'>$newdisplay[username]</td>
+		</tr>
+		<tr>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #BFBFBF; font-size: 25px;'>Email</td>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #FFFFFF; font-size: 25px;'>$newdisplay[email]</td>
+		</tr>
+		<tr>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #BFBFBF; font-size: 25px;'>Displayname</td>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #FFFFFF; font-size: 25px;'>$newdisplay[displayname]</td>
+		</tr>
+		<tr>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #BFBFBF; font-size: 25px;'>Password</td>
+			<td style='border: 1px solid black; border-collapse: collapse; text-align: left; padding: 15px; background-color: #FFFFFF; font-size: 25px;'>$newdisplay[password]</td>
+		</tr>
+	</table>
+	";
+}
+else {
+	$html = "<p style='font-weight: bolder; font-size: 30px;'>$newdisplay[log]</p>";
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,6 +87,7 @@ else {
 </head>
 <body>
 	<div>
+		<!--?php var_dump($newdisplay);?-->
 		<?php echo $html;?>
 	</div>
 </body>
