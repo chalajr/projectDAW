@@ -18,7 +18,7 @@ $user->read();
 
 //var_dump($user);
 	  
-if(!empty($user->id) && $user->deleted!=1){
+if(!empty($user->id) && !empty($user->username) && $user->deleted!=1){
     
     // create display
     $display = array(
@@ -33,7 +33,8 @@ if(!empty($user->id) && $user->deleted!=1){
     http_response_code(200);
   
     // make it json format
-    echo json_encode($display);
+    $jsondisplay = json_encode($display); 
+    echo $jsondisplay;
 }
 
 

@@ -57,12 +57,14 @@ class User
 
         $item = $statement->fetch(PDO::FETCH_ASSOC);
 
-        $this->id = $item['id'];
-        $this->username = $item['username'];
-        $this->email = $item['email'];
-        $this->displayname = $item['displayname'];
-        $this->password = $item['password'];
-        $this->deleted = $item['deleted'];
+        if($item) {
+            $this->id = $item['id'];
+            $this->username = $item['username'];
+            $this->email = $item['email'];
+            $this->displayname = $item['displayname'];
+            $this->password = $item['password'];
+            $this->deleted = $item['deleted'];
+        }
 
     }
 
