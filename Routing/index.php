@@ -4,12 +4,12 @@ include('Route.php');
 
 // Add base route (startpage)
 Route::add('/',function(){
-    echo 'Welcome :-)';
+    echo 'Welcome to Team Invetorizer routing test app! :^)';
 });
 
 // Simple test route that simulates static html file
 Route::add('/test.html',function(){
-    echo 'Hello from test.html';
+    echo "<p>This is a virtual. It's not like it really exists</p></br><p>Does it? ... 8^(</p>";
 });
 
 // Post route example
